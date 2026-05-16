@@ -23,7 +23,8 @@ from rest_framework_simplejwt.views import TokenRefreshView
 from .views import (
     CustomTokenObtainPairView, RegisterView, MeView,
     StaffCreateView, OfficerListView, SeniorOfficerListView,
-    AllStaffListView, StaffUpdateView, StaffDeleteView,   # ← added
+    AllStaffListView, StaffUpdateView, StaffDeleteView, ChangePasswordView
+    
 )
 
 urlpatterns = [
@@ -37,4 +38,5 @@ urlpatterns = [
     path('staff/',           AllStaffListView.as_view(),          name='all-staff'),
     path('staff/<int:pk>/update/', StaffUpdateView.as_view(),     name='staff-update'),   # ← new
     path('staff/<int:pk>/delete/', StaffDeleteView.as_view(),     name='staff-delete'),   # ← new
+    path('change-password/', ChangePasswordView.as_view(),        name='change-password'),
 ]
